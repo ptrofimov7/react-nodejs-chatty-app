@@ -4,13 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -r tsconfig-paths/register src/app.ts"
+    "dev": "nodemon -r tsconfig-paths/register src/app.ts | ./node_modules/.bin/bunyan",
+    "lint:check": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' --fix",
+    "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
+    "prettier:fix": "prettier --write 'src/**/*.{ts,json}'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@socket.io/redis-adapter": "^8.1.0",
+    "@types/bunyan": "^1.8.8",
+    "bunyan": "^1.8.15",
     "compression": "^1.7.4",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
