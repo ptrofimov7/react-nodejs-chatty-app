@@ -14,7 +14,7 @@ import { IEmailJob, IUserJob } from '@user/interfaces/user.interface';
 
 type IBaseJobData =
   | IAuthJob
-  // | IEmailJob
+  | IEmailJob
   // | IPostJobData
   // | IReactionJob
   // | ICommentJob
