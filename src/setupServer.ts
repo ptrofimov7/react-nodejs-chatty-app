@@ -33,20 +33,24 @@ export class ChattyServer {
   }
 
   private securityMiddleware(app: Application): void {
-    app.use(cookieSession({
-      name: 'session',
-      keys: [config.SECRET_KEY_ONE!, config.SECRET_KEY_TWO!],
-      maxAge: 24 * 7 * 3600000,
-      secure: config.NODE_ENV !== 'development'
-    }));
+    app.use(
+      cookieSession({
+        name: 'session',
+        keys: [config.SECRET_KEY_ONE!, config.SECRET_KEY_TWO!],
+        maxAge: 24 * 7 * 3600000,
+        secure: config.NODE_ENV !== 'development'
+      })
+    );
     app.use(hpp());
     app.use(helmet());
-    app.use(cors({
-      origin: config.CLIENT_URL,
-      credentials: true,
-      optionsSuccessStatus: 200,
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
-    }));
+    app.use(
+      cors({
+        origin: config.CLIENT_URL,
+        credentials: true,
+        optionsSuccessStatus: 200,
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+      })
+    );
   }
 
   private standardMiddleware(app: Application): void {
@@ -102,14 +106,11 @@ export class ChattyServer {
   private startHttpServer(httpServer: http.Server): void {
     log.info(`Server has started with process ${process.pid}`);
 
-    httpServer.listen(SERVER_PORT, () => {
+    httpServer.listen(SERVER_PORT, '127.0.0.1', () => {
       log.info(`Server running on port ${SERVER_PORT}`);
     });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private scoketIOConnection(io: Server): void {
-
-  }
-
+  private scoketIOConnection(io: Server): void {}
 }
