@@ -8,6 +8,7 @@ import { IPostJobData } from '@post/interfaces/post.interface';
 import { IFileImageJobData } from '@image/interfaces/image.interface';
 import { IReactionJob } from '@reaction/interfaces/reaction.interface';
 import { ICommentJob } from '@comment/interfaces/comment.interface';
+import { IBlockedUserJobData, IFollowerJobData } from '@follower/interfaces/follower.interface';
 
 type IBaseJobData =
   | IAuthJob
@@ -15,8 +16,8 @@ type IBaseJobData =
   | IPostJobData
   | IReactionJob
   | ICommentJob
-  // | IFollowerJobData
-  // | IBlockedUserJobData
+  | IFollowerJobData
+  | IBlockedUserJobData
   // | INotificationJobData
   | IFileImageJobData
   // | IChatJobData
