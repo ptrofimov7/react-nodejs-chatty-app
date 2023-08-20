@@ -15,6 +15,9 @@ import { config } from '@root/config';
 import applicationRoutes from '@root/routes';
 import Logger from 'bunyan';
 import { SocketIOPostHandler } from '@socket/post';
+import { SocketIOFollowerHandler } from '@socket/follower';
+import { SocketIOUserHandler } from '@socket/user';
+import { SocketIONotificationHandler } from '@socket/notification';
 
 const SERVER_PORT = 5000;
 const log: Logger = config.createLogger('server');
@@ -112,10 +115,15 @@ export class ChattyServer {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   private scoketIOConnection(io: Server): void {
     const postSockeHandler: SocketIOPostHandler = new SocketIOPostHandler(io);
-    postSockeHandler.listen();
+    const followerSockeHandler: SocketIOFollowerHandler = new SocketIOFollowerHandler(io);
+    const userSockeHandler: SocketIOUserHandler = new SocketIOUserHandler(io);
+    const notificationSockeHandler: SocketIONotificationHandler = new SocketIONotificationHandler();
 
+    postSockeHandler.listen();
+    followerSockeHandler.listen();
+    userSockeHandler.listen();
+    notificationSockeHandler.listen(io);
   }
 }
