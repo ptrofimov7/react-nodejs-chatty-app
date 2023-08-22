@@ -78,7 +78,7 @@ export class Utils {
       version = version.replace(/['"]+/g, '');
       id = id.replace(/['"]+/g, '');
     }
-    return `https://res.cloudinary.com/dyamr9ym3/image/upload/v${version}/${id}`;
+    return `https://res.cloudinary.com/djtxp2nyl/image/upload/v${version}/${id}`;
   }
 
   static generateString(length) {
@@ -136,7 +136,7 @@ export class Utils {
 
   static getVideo(videoId, videoVersion) {
     return videoId && videoVersion
-      ? `https://res.cloudinary.com/dyamr9ym3/video/upload/v${videoVersion}/${videoId}`
+      ? `https://res.cloudinary.com/djtxp2nyl/video/upload/v${videoVersion}/${videoId}`
       : '';
   }
 
