@@ -31,28 +31,28 @@ describe('ChatWindow', () => {
       store.dispatch(addToChatList({ isLoading: true, chatList: [messageData] }));
     });
     render(<ChatWindow />);
-    await act(() => { });
+    await act(() => {});
     const messageLoading = await screen.findByTestId('message-loading');
     expect(messageLoading).toBeInTheDocument();
   });
 
   it('should display chat title', async () => {
     render(<ChatWindow />);
-    await act(() => { });
+    await act(() => {});
     const chatTitle = await screen.findByTestId('chat-title');
     expect(chatTitle).toBeInTheDocument();
   });
 
   it('should display chat window', async () => {
     render(<ChatWindow />);
-    await act(() => { });
+    await act(() => {});
     const chatWindow = await screen.findByTestId('message-page');
     expect(chatWindow).toBeInTheDocument();
   });
 
   it('should display chat input', async () => {
     render(<ChatWindow />);
-    await act(() => { });
+    await act(() => {});
     const chatInput = await screen.findByTestId('chat-inputarea');
     expect(chatInput).toBeInTheDocument();
   });

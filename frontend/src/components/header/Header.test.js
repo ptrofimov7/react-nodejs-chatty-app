@@ -18,7 +18,7 @@ describe('Header', () => {
     it('should be displayed', async () => {
       jest.spyOn(socketService.socket, 'emit');
       render(<Header />);
-      await act(() => { });
+      await act(() => {});
       const skeleton = await screen.findByTestId('header-skeleton');
       expect(skeleton).toBeInTheDocument();
     });
@@ -38,14 +38,14 @@ describe('Header', () => {
     it('should be displayed', async () => {
       jest.spyOn(socketService.socket, 'emit');
       render(<Header />);
-      await act(() => { });
+      await act(() => {});
       const headerWrapper = await screen.findByTestId('header-wrapper');
       expect(headerWrapper).toBeInTheDocument();
     });
 
     it('should have header image', async () => {
       render(<Header />);
-      await act(() => { });
+      await act(() => {});
       const headerImage = await screen.findByTestId('header-image');
       expect(headerImage).toBeInTheDocument();
       expect(headerImage.childNodes.item(0)).toHaveAttribute('src', 'logo.svg');
@@ -54,7 +54,7 @@ describe('Header', () => {
 
     it('should have nav list items', async () => {
       render(<Header />);
-      await act(() => { });
+      await act(() => {});
       const listElement = await screen.findAllByRole('list');
       const { getAllByRole } = within(listElement[0]);
       const items = getAllByRole('listitem');

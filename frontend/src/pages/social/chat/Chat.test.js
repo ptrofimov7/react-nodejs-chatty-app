@@ -13,7 +13,7 @@ import { createSearchParams } from 'react-router-dom';
 describe('Chat', () => {
   it('should have chat list component', async () => {
     render(<Chat />);
-    await act(() => { });
+    await act(() => {});
     const chatListElement = await screen.findByTestId('chatList');
     expect(chatListElement).toBeInTheDocument();
   });

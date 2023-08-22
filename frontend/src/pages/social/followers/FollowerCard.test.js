@@ -56,7 +56,7 @@ describe('FollowerCard', () => {
     jest.spyOn(socketService.socket, 'emit');
     jest.spyOn(FollowersUtils, 'socketIOBlockAndUnblockCard');
     render(<FollowerCard userData={existingUser} />);
-    await act(() => { });
+    await act(() => {});
     const cardElementButtons = await screen.findAllByTestId('card-following-button');
     userEvent.click(cardElementButtons[0].children[0]);
     expect(cardElementButtons[0].children[0].textContent).toEqual('Block');
@@ -74,7 +74,7 @@ describe('FollowerCard', () => {
     jest.spyOn(socketService.socket, 'emit');
     jest.spyOn(FollowersUtils, 'socketIOBlockAndUnblockCard');
     render(<FollowerCard userData={existingUser} />);
-    await act(() => { });
+    await act(() => {});
     const cardElementButtons = await screen.findAllByTestId('card-following-button');
     userEvent.click(cardElementButtons[0].children[0]);
     expect(cardElementButtons[0].children[0].textContent).toEqual('Unblock');

@@ -125,7 +125,7 @@ describe('Timeline', () => {
       }
     };
     render(<Timeline {...props} />);
-    await act(() => { });
+    await act(() => {});
     const postElement = await screen.findByTestId('post');
     expect(postElement).toBeInTheDocument();
   });
