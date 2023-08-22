@@ -16,6 +16,7 @@ RUN
 1. redis-server
 2. redis-commander
 3. http://127.0.0.1:8081/ - redis  view
-4. mongodb+srv://ptrofimov7:etEQ17DtuDdNhAE6@cluster0.ylwxfjo.mongodb.net/?retryWrites=true&w=majority - view mongo
+4. Set mongo db url.
+4. Change url cloudinary to your own
 3. npm run dev
 
