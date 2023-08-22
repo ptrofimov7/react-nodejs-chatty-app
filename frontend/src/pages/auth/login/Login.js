@@ -42,7 +42,7 @@ const Login = () => {
       setLoading(false);
       setHasError(true);
       setAlertType('alert-error');
-      setErrorMessage(error?.response?.data.message);
+      setErrorMessage(error?.response?.data?.message || `${error}`);
     }
   };
 

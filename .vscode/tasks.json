@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build with Aliases",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "tsc-alias",
+        "-p",
+        "tsconfig.json"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

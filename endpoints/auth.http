@@ -20,11 +20,11 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "",
-  "password": "",
-  "email": "",
-  "avatarColor": "",
-  "avatarImage": "<add-a-base64-encoded-string>"
+  "username": "ivan",
+  "password": "12345678",
+  "email": "ptrofimov7@gmail.com",
+  "avatarColor": "red",
+  "avatarImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKcAAADlCAIAAAC55HDcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVHhe7dEBDQAwCMCwu0Em0rmQNamDvtuhxnqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1ousF1kvsl5kvch6kfUi60XWi6wXWS+yXmS9yHqR9SLrRdaLrBdZL7JeZL3IepH1IutF1nt2PlHsuiudwpqLAAAAAElFTkSuQmCC"
 }
 
 ###
@@ -34,8 +34,8 @@ Accept: application/json
 withCredentials: true
 
 {
-  "username": "",
-  "password": ""
+  "username": "ivan",
+  "password": "12345678"
 }
 
 ###
