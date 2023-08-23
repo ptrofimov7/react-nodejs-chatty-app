@@ -30,7 +30,7 @@ const Notification = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -38,7 +38,7 @@ const Notification = () => {
     try {
       NotificationUtils.markMessageAsRead(notification?._id, notification, setNotificationDialogContent);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -48,7 +48,7 @@ const Notification = () => {
       const response = await notificationService.deleteNotification(messageId);
       Utils.dispatchNotification(response.data.message, 'success', dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

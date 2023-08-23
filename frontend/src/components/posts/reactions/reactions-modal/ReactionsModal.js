@@ -28,7 +28,7 @@ const ReactionsModal = () => {
       setPostReactions(orderedPosts);
       setReactionsOfPost(orderedPosts);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

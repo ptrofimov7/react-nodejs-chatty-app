@@ -69,7 +69,7 @@ const Header = () => {
       setNotifications(mappedNotifications);
       socketService?.socket.emit('setup', { userId: storedUsername });
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -77,7 +77,7 @@ const Header = () => {
     try {
       NotificationUtils.markMessageAsRead(notification?._id, notification, setNotificationDialogContent);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -86,7 +86,7 @@ const Header = () => {
       const response = await notificationService.deleteNotification(messageId);
       Utils.dispatchNotification(response.data.message, 'success', dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -109,7 +109,7 @@ const Header = () => {
       setIsMessageActive(false);
       dispatch(getConversationList());
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -120,7 +120,7 @@ const Header = () => {
       await userService.logoutUser();
       navigate('/');
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

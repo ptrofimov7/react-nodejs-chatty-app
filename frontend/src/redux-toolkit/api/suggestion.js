@@ -7,7 +7,7 @@ const getUserSuggestions = createAsyncThunk('user/getSuggestions', async (name, 
     const response = await userService.getUserSuggestions();
     return response.data;
   } catch (error) {
-    Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
   }
 });
 

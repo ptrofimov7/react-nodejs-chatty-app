@@ -28,7 +28,7 @@ const FollowerCard = ({ userData }) => {
       setFollowers(response.data.followers);
       setLoading(false);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -41,7 +41,7 @@ const FollowerCard = ({ userData }) => {
       );
       setUser(response.data.user);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -50,7 +50,7 @@ const FollowerCard = ({ userData }) => {
       socketService?.socket?.emit('block user', { blockedUser: userInfo._id, blockedBy: user?._id });
       FollowersUtils.blockUser(userInfo, dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -59,7 +59,7 @@ const FollowerCard = ({ userData }) => {
       socketService?.socket?.emit('unblock user', { blockedUser: userInfo._id, blockedBy: user?._id });
       FollowersUtils.unblockUser(userInfo, dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

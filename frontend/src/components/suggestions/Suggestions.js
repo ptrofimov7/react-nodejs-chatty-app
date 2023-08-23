@@ -22,7 +22,7 @@ const Suggestions = () => {
       setUsers(result);
       dispatch(addToSuggestions({ users: result, isLoading: false }));
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

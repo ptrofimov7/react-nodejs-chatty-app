@@ -29,7 +29,7 @@ const Followers = () => {
       }
     } catch (error) {
       setLoading(false);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   }, [profile, dispatch]);
 
@@ -38,7 +38,7 @@ const Followers = () => {
       socketService?.socket?.emit('block user', { blockedUser: user._id, blockedBy: profile?._id });
       FollowersUtils.blockUser(user, dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -47,7 +47,7 @@ const Followers = () => {
       socketService?.socket?.emit('unblock user', { blockedUser: user._id, blockedBy: profile?._id });
       FollowersUtils.unblockUser(user, dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

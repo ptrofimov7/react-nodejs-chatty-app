@@ -56,7 +56,7 @@ const People = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   }, [currentPage, dispatch]);
 
@@ -67,7 +67,7 @@ const People = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -75,7 +75,7 @@ const People = () => {
     try {
       FollowersUtils.followUser(user, dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -86,7 +86,7 @@ const People = () => {
       socketService?.socket?.emit('unfollow user', userData);
       FollowersUtils.unFollowUser(user, profile, dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

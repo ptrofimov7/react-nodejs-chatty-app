@@ -50,7 +50,7 @@ const SocialLinks = ({ editableSocialInputs, username, profile, loading, setEdit
       const response = await userService.updateSocialLinks(editableSocialInputs);
       Utils.dispatchNotification(response.data.message, 'success', dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

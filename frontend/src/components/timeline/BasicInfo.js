@@ -43,7 +43,7 @@ const BasicInfo = ({ editableInputs, username, profile, loading, setEditableInpu
       const response = await userService.updateBasicInfo(editableInputs);
       Utils.dispatchNotification(response.data.message, 'success', dispatch);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

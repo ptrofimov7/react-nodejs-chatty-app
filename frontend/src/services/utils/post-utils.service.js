@@ -76,7 +76,13 @@ export class PostUtils {
         setLoading(false);
       }
     } catch (error) {
-      PostUtils.dispatchNotification(error.response.data.message, 'error', setApiResponse, setLoading, dispatch);
+      PostUtils.dispatchNotification(
+        error?.response.data?.message || 'Something went wrong',
+        'error',
+        setApiResponse,
+        setLoading,
+        dispatch
+      );
     }
   }
 
@@ -95,7 +101,13 @@ export class PostUtils {
         PostUtils.closePostModal(dispatch);
       }
     } catch (error) {
-      PostUtils.dispatchNotification(error.response.data.message, 'error', setApiResponse, setLoading, dispatch);
+      PostUtils.dispatchNotification(
+        error?.response.data?.message || 'Something went wrong',
+        'error',
+        setApiResponse,
+        setLoading,
+        dispatch
+      );
     }
   }
 

@@ -35,7 +35,6 @@ export class SignIn {
       config.JWT_TOKEN!
     );
     req.session = { jwt: userJwt };
-    console.log(`sessionId=${req.session.jwt}`);
 
     const userDocument: IUserDocument = {
       ...user,

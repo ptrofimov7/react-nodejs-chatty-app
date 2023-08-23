@@ -29,7 +29,7 @@ const ChatWindow = () => {
         ChatUtils.privateChatMessages = [...response.data.messages];
         setChatMessages([...ChatUtils.privateChatMessages]);
       } catch (error) {
-        Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+        Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
       }
     },
     [dispatch]
@@ -49,7 +49,7 @@ const ChatWindow = () => {
       setReceiver(response.data.user);
       ChatUtils.joinRoomEvent(response.data.user, profile);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   }, [dispatch, profile, searchParams]);
 
@@ -75,7 +75,7 @@ const ChatWindow = () => {
       });
       await chatService.saveChatMessage(messageData);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -83,7 +83,7 @@ const ChatWindow = () => {
     try {
       await chatService.updateMessageReaction(body);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -91,7 +91,7 @@ const ChatWindow = () => {
     try {
       await chatService.markMessageAsDelete(messageId, senderId, receiverId, type);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

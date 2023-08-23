@@ -69,7 +69,7 @@ const Profile = () => {
       setBgUrl(Utils.getImage(response.data.user?.bgImageId, response.data.user?.bgImageVersion));
       setLoading(false);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   }, [dispatch, searchParams, username]);
 
@@ -78,7 +78,7 @@ const Profile = () => {
       const imagesResponse = await imageService.getUserImages(searchParams.get('id'));
       setGalleryImages(imagesResponse.data.images);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   }, [dispatch, searchParams]);
 
@@ -106,7 +106,7 @@ const Profile = () => {
       }
     } catch (error) {
       setHasError(true);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -116,7 +116,7 @@ const Profile = () => {
       await removeImage(`/images/background/${bgImageId}`);
     } catch (error) {
       setHasError(true);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 
@@ -128,7 +128,7 @@ const Profile = () => {
       await removeImage(`/images/${imageId}`);
     } catch (error) {
       setHasError(true);
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

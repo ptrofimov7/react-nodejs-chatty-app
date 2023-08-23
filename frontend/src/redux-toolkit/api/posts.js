@@ -7,7 +7,7 @@ const getPosts = createAsyncThunk('post/getPosts', async (name, { dispatch }) =>
     const response = await postService.getAllPosts(1);
     return response.data;
   } catch (error) {
-    Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
   }
 });
 

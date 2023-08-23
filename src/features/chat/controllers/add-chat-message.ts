@@ -106,19 +106,19 @@ export class Add {
   }
 
   private async messageNotification({ currentUser, message, receiverName, receiverId }: IMessageNotification): Promise<void> {
-    const cachedUser: IUserDocument = (await userCache.getUserFromCache(`${receiverId}`)) as IUserDocument;
-    if (cachedUser.notifications.messages) {
-      const templateParams: INotificationTemplate = {
-        username: receiverName,
-        message,
-        header: `Message notification from ${currentUser.username}`
-      };
-      const template: string = notificationTemplate.notificationMessageTemplate(templateParams);
-      emailQueue.addEmailJob('directMessageEmail', {
-        receiverEmail: cachedUser.email!,
-        template,
-        subject: `You've received messages from ${currentUser.username}`
-      });
-    }
+    //const cachedUser: IUserDocument = (await userCache.getUserFromCache(`${receiverId}`)) as IUserDocument;
+    // if (cachedUser.notifications.messages) {
+    //   const templateParams: INotificationTemplate = {
+    //     username: receiverName,
+    //     message,
+    //     header: `Message notification from ${currentUser.username}`
+    //   };
+    //   const template: string = notificationTemplate.notificationMessageTemplate(templateParams);
+    //   emailQueue.addEmailJob('directMessageEmail', {
+    //     receiverEmail: cachedUser.email!,
+    //     template,
+    //     subject: `You've received messages from ${currentUser.username}`
+    //   });
+    // }
   }
 }

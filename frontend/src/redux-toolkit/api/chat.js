@@ -7,7 +7,7 @@ const getConversationList = createAsyncThunk('chat/getUserChatList', async (name
     const response = await chatService.getConversationList();
     return response.data;
   } catch (error) {
-    Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
   }
 });
 

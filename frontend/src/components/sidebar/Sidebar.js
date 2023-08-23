@@ -66,7 +66,7 @@ const Sidebar = () => {
           user?.receiverUsername !== profile?.username ? user?.receiverUsername : user?.senderUsername;
         await chatService.addChatUsers({ userOne: profile?.username, userTwo: userTwoName });
       } catch (error) {
-        Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+        Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
       }
     },
     [dispatch, profile]
@@ -80,7 +80,7 @@ const Sidebar = () => {
       ChatUtils.privateChatMessages = [];
       await chatService.removeChatUsers({ userOne: profile?.username, userTwo: userTwoName });
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

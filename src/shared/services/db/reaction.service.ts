@@ -55,17 +55,17 @@ class ReactionService {
         reaction: type!
       });
       socketIONotificationObject.emit('insert notification', notifications, { userTo });
-      const templateParams: INotificationTemplate = {
-        username: updatedReaction[0].username!,
-        message: `${username} reacted to your post.`,
-        header: 'Post Reaction Notification'
-      };
-      const template: string = notificationTemplate.notificationMessageTemplate(templateParams);
-      emailQueue.addEmailJob('reactionsEmail', {
-        receiverEmail: updatedReaction[0].email!,
-        template,
-        subject: 'Post reaction notification'
-      });
+      // const templateParams: INotificationTemplate = {
+      //   username: updatedReaction[0].username!,
+      //   message: `${username} reacted to your post.`,
+      //   header: 'Post Reaction Notification'
+      // };
+      // const template: string = notificationTemplate.notificationMessageTemplate(templateParams);
+      // emailQueue.addEmailJob('reactionsEmail', {
+      //   receiverEmail: updatedReaction[0].email!,
+      //   template,
+      //   subject: 'Post reaction notification'
+      // });
     }
   }
 

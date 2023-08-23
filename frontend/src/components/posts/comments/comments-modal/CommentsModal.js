@@ -19,7 +19,7 @@ const CommentsModal = () => {
       const response = await postService.getPostComments(post?._id);
       setPostComments(response.data?.comments);
     } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+      Utils.dispatchNotification(error?.response.data?.message || 'Something went wrong', 'error', dispatch);
     }
   };
 

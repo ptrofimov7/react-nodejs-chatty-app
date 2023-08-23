@@ -132,7 +132,13 @@ const AddPost = ({ selectedImage, selectedPostVideo }) => {
       }
     } catch (error) {
       setHasVideo(false);
-      PostUtils.dispatchNotification(error.response.data.message, 'error', setApiResponse, setLoading, dispatch);
+      PostUtils.dispatchNotification(
+        error?.response.data?.message || 'Something went wrong',
+        'error',
+        setApiResponse,
+        setLoading,
+        dispatch
+      );
     }
   };
 

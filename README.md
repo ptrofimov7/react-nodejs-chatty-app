@@ -12,11 +12,12 @@
 9. Image upload
 10. In-app notification and email notification
 
-RUN
+RUN DEV
 1. redis-server
 2. redis-commander
 3. http://127.0.0.1:8081/ - redis  view
 4. Set mongo db url.
-4. Change url cloudinary to your own
-3. npm run dev
+5. Change url cloudinary to your own
+6. Set sender_email, sender_passord using etherial email
+7. npm run dev
 
